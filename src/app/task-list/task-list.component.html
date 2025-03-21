@@ -1,0 +1,57 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<main>
+  <div class="content">
+    <div class="left-side">      
+      <div class="task-list">
+        <div *ngIf="tasks.length === 0" class="no-tasks">
+          Loading tasks...
+        </div>
+        
+        <div *ngFor="let task of tasks" class="task-item">
+          <h3>{{ task.title }}</h3>
+          <p>{{ task.description }}</p>
+          <div class="task-meta">
+            <span class="status-badge" [class.pending]="task.status === 'pending'" 
+                  [class.in-progress]="task.status === 'in_progress'"
+                  [class.completed]="task.status === 'completed'">
+              {{ task.status | titlecase }}
+            </span>
+            <span class="due-date">{{ task.dueDate | date }}</span>
+            <div class="action-buttons">
+              <button mat-icon-button 
+                      (click)="openEditDialog(task)"
+                      aria-label="Edit task"
+                      class="edit-button">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button 
+                      (click)="deleteTask(task.id)"
+                      aria-label="Delete task"
+                      class="delete-button">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+  
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  
+  
