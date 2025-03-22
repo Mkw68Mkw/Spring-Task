@@ -1,0 +1,182 @@
+.task-list {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.task-item {
+  background: color-mix(in srgb, var(--gray-900) 5%, transparent);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.task-item h3 {
+  color: var(--gray-900);
+  margin: 0 0 0.5rem 0;
+}
+
+.task-item p {
+  color: var(--gray-700);
+  margin-bottom: 0.5rem;
+}
+
+.task-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  text-transform: capitalize;
+}
+
+.status-badge.pending {
+  background: color-mix(in srgb, var(--hot-red) 15%, transparent);
+  color: var(--hot-red);
+}
+
+.status-badge.in-progress {
+  background: color-mix(in srgb, var(--orange) 15%, transparent);
+  color: var(--orange);
+}
+
+.status-badge.completed {
+  background: color-mix(in srgb, var(--bright-blue) 15%, transparent);
+  color: var(--bright-blue);
+}
+
+.due-date {
+  color: var(--gray-400);
+  font-size: 0.875rem;
+}
+
+.no-tasks {
+  color: var(--gray-400);
+  text-align: center;
+  padding: 2rem;
+}
+
+.add-button {
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 1001;
+  transition: transform 0.2s ease;
+}
+
+.add-button:hover {
+  transform: scale(1.1);
+}
+
+/* Bei Mobile etwas kleiner */
+@media (max-width: 768px) {
+  .add-button {
+    top: 1rem;
+    right: 1rem;
+    transform: scale(0.9);
+  }
+  
+  .add-button:hover {
+    transform: scale(1);
+  }
+}
+
+.app-header {
+  text-align: center;
+  margin: 2rem 0 3rem;
+  padding: 1rem;
+}
+
+.app-header h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--bright-blue);
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+  background: linear-gradient(
+    to right,
+    var(--electric-violet),
+    var(--bright-blue)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* Modernere Syntax */
+  background: linear-gradient(
+    to right,
+    var(--electric-violet),
+    var(--bright-blue)
+  ) text;
+  transition: all 0.3s ease;
+}
+
+.app-header h2 {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--gray-700);
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Hover-Effekt für Interaktion */
+.app-header:hover h1 {
+  transform: scale(1.02);
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+  .app-header {
+    margin: 1.5rem 0;
+  }
+  
+  .app-header h1 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .app-header h2 {
+    line-height: 1.3;
+  }
+}
+
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-weight: 100;
+  background: blue;
+  color: var(--gray-400);
+  padding: 1rem 0;
+  border-top: 1px solid var(--gray-700);
+  z-index: 1000;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: aliceblue;
+  padding: 0 1rem;
+}
+
+.app-footer p {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+}
+
+/* Padding für Container anpassen */
+.container {
+  padding-bottom: 100px;
+}
+
+/* In :root in styles.css ergänzen */
+:root {
+  --gray-600: oklch(50.9% 0.015 304.04); /* Zwischen --gray-700 und --gray-400 */
+}

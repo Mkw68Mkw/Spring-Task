@@ -3,7 +3,7 @@ import { TaskService } from '../services/task.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { CreateTaskComponent } from '../create-task/create-task.component';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -13,7 +13,8 @@ import { Subject, takeUntil } from 'rxjs';
   imports: [
     CommonModule,
     RouterModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
@@ -45,7 +46,7 @@ export class TaskListComponent implements OnInit, OnDestroy {
   loadTasks() {
     this.taskService.getAllTasks().subscribe({
       next: (tasks) => this.tasks = tasks,
-      error: (err) => console.error('Error loading tasks:', err)
+      error: (err) => console.error('Fehler beim Laden der Aufgaben:', err)
     });
   }
 
