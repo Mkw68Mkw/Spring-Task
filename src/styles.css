@@ -2,3 +2,48 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Global Styles */
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  tab-size: 4;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  line-height: inherit;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Responsive Typography */
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+/* Material Icons Anpassungen */
+.material-icons {
+  font-size: 1.25rem;
+  vertical-align: middle;
+}
+
+:root {
+  --electric-violet: oklch(53.18% 0.28 296.97);
+  --bright-blue: oklch(51.01% 0.274 263.83);
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+}

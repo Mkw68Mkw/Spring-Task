@@ -7,30 +7,19 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<style>
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  main {
-    display: block;
-    margin: 0 auto;
-    max-width: 960px;
-    padding: 20px;
-  }
-
-  /* Responsive Styles */
-  @media screen and (max-width: 767px) {
-    main {
-      padding: 10px;
-    }
-  }
-</style>
-
-<main>
+<div class="container">
+  <header class="app-header">
+    <h1>SpringTasks</h1>
+    <h2>Task-Management powered by Java & Angular</h2>
+  </header>
+  <button mat-fab color="primary" class="add-button" aria-label="Neue Aufgabe erstellen" (click)="openCreateTaskDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
   <router-outlet></router-outlet>
-</main>
+  <footer class="app-footer">
+    <div class="footer-content">
+      <p>&copy; {{ currentYear }} SpringTasks - Entwickelt von Kevin Wu</p>
+      <p>Powered by Spring Boot & Angular</p>
+    </div>
+  </footer>
+</div>
