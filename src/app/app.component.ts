@@ -19,7 +19,8 @@ export class AppComponent {
 
   openCreateTaskDialog(): void {
     const dialogRef = this.dialog.open(CreateTaskComponent, {
-      width: '600px'
+      width: '600px',
+      panelClass: 'rounded-dialog'
     });
 
     dialogRef.afterClosed().subscribe(result => {

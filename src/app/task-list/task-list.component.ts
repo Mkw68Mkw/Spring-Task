@@ -64,7 +64,8 @@ export class TaskListComponent implements OnInit, OnDestroy {
   openEditDialog(task: any): void {
     const dialogRef = this.dialog.open(CreateTaskComponent, {
       width: '600px',
-      data: { task }
+      data: { task },
+      panelClass: 'rounded-dialog'
     });
 
     dialogRef.afterClosed().subscribe(updatedTask => {

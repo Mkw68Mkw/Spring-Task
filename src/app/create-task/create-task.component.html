@@ -1,46 +1,46 @@
-<h2 mat-dialog-title>Neue Aufgabe erstellen</h2>
+<h2 mat-dialog-title>Create/Modify a task</h2>
 
 <mat-dialog-content>
   <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="task-form">
     <div class="form-group">
-      <label for="title">Titel</label>
+      <label for="title">Title</label>
       <input type="text" id="title" formControlName="title" class="form-control">
       <div *ngIf="taskForm.get('title')?.errors?.['required'] && taskForm.get('title')?.touched" 
            class="error-message">
-        Titel ist erforderlich
+        Title is required
       </div>
     </div>
 
     <div class="form-group">
-      <label for="description">Beschreibung</label>
+      <label for="description">Description</label>
       <textarea id="description" formControlName="description" class="form-control"></textarea>
     </div>
 
     <div class="form-group">
-      <label for="dueDate">Fälligkeitsdatum</label>
+      <label for="dueDate">Due Date</label>
       <input type="date" id="dueDate" formControlName="dueDate" class="form-control">
       <div *ngIf="taskForm.get('dueDate')?.errors?.['required'] && taskForm.get('dueDate')?.touched" 
            class="error-message">
-        Datum ist erforderlich
+        Date is required
       </div>
     </div>
 
     <div class="form-group">
       <label for="status">Status</label>
       <select id="status" formControlName="status" class="form-control">
-        <option value="pending">Ausstehend</option>
-        <option value="in_progress">In Bearbeitung</option>
-        <option value="completed">Abgeschlossen</option>
+        <option value="pending">Pending</option>
+        <option value="in_progress">In Progress</option>
+        <option value="completed">Completed</option>
       </select>
     </div>
 
     <mat-dialog-actions align="end">
-      <button mat-button type="button" (click)="onCancel()">Abbrechen</button>
+      <button mat-button type="button" (click)="onCancel()">Cancel</button>
       <button mat-raised-button 
               color="primary" 
               type="submit"
               [disabled]="!taskForm.valid">
-        Speichern
+        Save
       </button>
     </mat-dialog-actions>
   </form>
