@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://ebsspring.mkw68.com/api'
+    apiUrl: 'https://elastictask.mkw68.com/api'
   };
